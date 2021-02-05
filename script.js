@@ -17,8 +17,10 @@ const calculate = (e) => {
   ) {
     alert('Fill every input properly');
   } else {
-    let amount = (billAmt.value * service.value) / 100 / people.value;
-    amount = Math.ceil(amount).toFixed(2);
+    let amount = (billAmt.value * service.value) / 100;
+    amount = Math.ceil(amount);
+    amount = amount / people.value;
+    amount = amount.toFixed(2);
 
     outputDiv.classList.add('show');
 
